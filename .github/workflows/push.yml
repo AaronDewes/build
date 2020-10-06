@@ -6,6 +6,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Setup cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            /home/runner/work/build/cache
+          key: umbrel-os-rockrpo64-cache
       - name: Update packages
         run: sudo apt update && sudo apt full-upgrade -y
 
