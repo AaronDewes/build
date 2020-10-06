@@ -353,6 +353,10 @@ install_common()
 	chroot "${SDCARD}" /bin/bash -c "systemctl --no-reload enable armbian-resize-filesystem.service >/dev/null 2>&1"
 	chroot "${SDCARD}" /bin/bash -c "systemctl --no-reload enable armbian-hardware-monitor.service >/dev/null 2>&1"
 
+	# Install Umbrel packages
+	chroot "${SDCARD}" /bin/bash -c "apt -y -qq install git fswatch jq python3-qrcode libffi-dev libssl-dev"
+	chroot "${SDCARD}" /bin/bash -c "curl -fsSL https://get.docker.com | sh"
+
 	# copy "first run automated config, optional user configured"
  	cp "${SRC}"/packages/bsp/armbian_first_run.txt.template "${SDCARD}"/boot/armbian_first_run.txt.template
 
