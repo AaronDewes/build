@@ -356,6 +356,7 @@ install_common()
 	# Install Umbrel packages
 	chroot "${SDCARD}" /bin/bash -c "apt -y -qq install git fswatch jq python3-qrcode libffi-dev libssl-dev"
 	chroot "${SDCARD}" /bin/bash -c "curl -fsSL https://get.docker.com | sh"
+	chroot "${SDCARD}" /bin/bash -c "pip3 install docker-compose"
 
 	# copy "first run automated config, optional user configured"
  	cp "${SRC}"/packages/bsp/armbian_first_run.txt.template "${SDCARD}"/boot/armbian_first_run.txt.template
