@@ -10,7 +10,7 @@ jobs:
         run: sudo apt update && sudo apt full-upgrade -y
 
       - name: Install dependencies
-        run: sudo apt-get -y install quilt qemu-user-static debootstrap libarchive-tools dialog psmisc acl
+        run: sudo apt-get -y install quilt qemu-user-static debootstrap libarchive-tools dialog psmisc acl apt-cacher-ng aptly binutils-arm-linux-gnueabihf ccache debian-archive-keyring debian-keyring device-tree-compiler f2fs-tools gcc-10-cross-base gcc-arm-linux-gnueabihf gnupg1 lib32ncurses6 lib32tinfo6 libasan5-armhf-cross libatomic1-armhf-cross libbison-dev libc6-armhf-cross libc6-dev-armhf-cross libf2fs-format4 libf2fs5 libfdt1 libfile-fcntllock-perl libfl-dev libgcc-9-dev-armhf-cross libgcc-s1-armhf-cross libgomp1-armhf-cross liblz4-tool libncurses5-dev libnfsidmap2 libpython2.7 libpython2.7-dev libstdc++6-armhf-cross libtirpc-common libtirpc3 libubsan1-armhf-cross libusb-1.0-0-dev linux-libc-dev-armhf-cross lzop nfs-common nfs-kernel-server ntpdate patchutils pixz pv rpcbind systemd-container u-boot-tools
 
       - name: Nuke current Docker installation
         run: |
