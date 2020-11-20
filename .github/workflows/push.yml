@@ -35,9 +35,9 @@ jobs:
             echo '{"experimental": true}' | sudo tee -a /etc/docker/daemon.json
             sudo systemctl restart docker
       - name: Run build
-        run: ./compile.sh BOARD="rockpro64" BRANCH="current" RELEASE="buster" KERNEL_ONLY="no" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no" BUILD_MINIMAL="yes"
+        run: ./compile.sh BOARD="odroidxu4" BRANCH="current" RELEASE="buster" KERNEL_ONLY="no" KERNEL_CONFIGURE="no" BUILD_DESKTOP="no" BUILD_MINIMAL="yes"
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          path: /home/runner/work/build/build/output/images/Armbian_20.11.0-trunk_Rockpro64_buster_current_5.8.13_minimal.img
-          name: Umbrel_Rockpro64_dev.img
+          path: /home/runner/work/build/build/output/images/Armbian_20.11.0-trunk_odroidxu4_buster_current_5.8.13_minimal.img
+          name: Umbrel_Odroid_dev.img
